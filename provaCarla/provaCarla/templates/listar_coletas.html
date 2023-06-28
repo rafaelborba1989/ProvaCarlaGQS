@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Coletas</title>
+</head>
+<body>
+<h1>Listar Coletas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Quantidade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for coleta in coletas %}
+            <tr>
+                <td>{{ coleta.id }}</td>
+                <td>{{ coleta.data }}</td>
+                <td>{{ coleta.quantidade }}</td>
+                <td>
+                    <a href="{% url 'detalhes_coleta' coleta.id %}">Detalhes</a>
+                    <a href="{% url 'deletar_coleta' coleta.id %}">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'criar_coleta' %}">Criar Coleta</a>
+
+</body>
+</html>

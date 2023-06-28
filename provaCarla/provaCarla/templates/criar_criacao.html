@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Criação</title>
+</head>
+<body>
+<h1>Criar Criação</h1>
+    <form method="POST" action="{% url 'adicionar_criacao' %}">
+        {% csrf_token %}
+        <label for="raca">Raça:</label>
+        <input type="text" name="raca" id="raca" maxlength="100" required>
+        <br>
+        <label for="data_entrada">Data de Entrada:</label>
+        <input type="date" name="data_entrada" id="data_entrada" required>
+        <br>
+        <input type="submit" value="Adicionar Criação">
+    </form>
+</body>
+</html>

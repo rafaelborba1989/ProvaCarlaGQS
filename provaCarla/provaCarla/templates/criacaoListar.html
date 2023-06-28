@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Criação</title>
+</head>
+<body>
+    <h1>Lista de Criação</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Raça</th>
+                <th>Data de Entrada</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for criacao in criacoes %}
+            <tr>
+                <td>{{ criacao.id }}</td>
+                <td>{{ criacao.raca }}</td>
+                <td>{{ criacao.data_entrada }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

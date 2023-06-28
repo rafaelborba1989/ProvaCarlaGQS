@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmar Deleção</title>
+</head>
+<body>
+<h1>Confirmar Deleção</h1>
+    <p>ID: {{ coleta.id }}</p>
+    <p>Data: {{ coleta.data }}</p>
+    <p>Quantidade: {{ coleta.quantidade }}</p>
+    <p>Tem certeza de que deseja deletar esta coleta?</p>
+    <form method="POST" action="{% url 'deletar_coleta' coleta.id %}">
+        {% csrf_token %}
+        <input type="submit" value="Confirmar">
+    </form>
+    <a href="{% url 'listar_coletas' %}">Cancelar</a>
+</body>
+</html>

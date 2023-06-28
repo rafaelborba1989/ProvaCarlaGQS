@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes da Coleta</title>
+</head>
+<body>
+ <h1>Detalhes da Coleta</h1>
+    <p>ID: {{ coleta.id }}</p>
+    <p>Data: {{ coleta.data }}</p>
+    <p>Quantidade: {{ coleta.quantidade }}</p>
+    <a href="{% url 'listar_coletas' %}">Voltar para Listagem</a>
+</body>
+</html>

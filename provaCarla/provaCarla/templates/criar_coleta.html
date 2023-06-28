@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Coleta</title>
+</head>
+<body>
+    <h1>Criar Coleta</h1>
+    <form method="POST" action="{% url 'adicionar_coleta' %}">
+        {% csrf_token %}
+        <label for="criacao">Criacao:</label>
+        <select name="criacao" id="criacao">
+            {% for criacao in criacoes %}
+                <option value="{{ criacao.id }}">{{ criacao.raca }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="data">Data:</label>
+        <input type="date" name="data" id="data" required>
+        <br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" name="quantidade" id="quantidade" required>
+        <br>
+        <input type="submit" value="Adicionar Coleta">
+    </form>
+
+</body>
+</html>
