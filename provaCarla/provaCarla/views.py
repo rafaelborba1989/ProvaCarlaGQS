@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Coleta, Criacao
-from .forms import ColetaForm, CriacaoForm
+from coleta.models import Coleta
+from criacao.models import Criacao
 
 def listar_coletas(request):
     coletas = Coleta.objects.all().order_by('-data')
@@ -17,6 +17,11 @@ def deletar_coleta(request, coleta_id):
         return redirect('listar_coletas')
     return render(request, 'confirmar_delecao.html', {'coleta': coleta})
 
+
+class ColetaForm:
+    pass
+
+
 def criar_coleta(request):
     if request.method == 'POST':
         form = ColetaForm(request.POST)
@@ -26,6 +31,11 @@ def criar_coleta(request):
     else:
         form = ColetaForm()
     return render(request, 'criar_coleta.html', {'form': form})
+
+
+class CriacaoForm:
+    pass
+
 
 def criar_criacao(request):
     if request.method == 'POST':
